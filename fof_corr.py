@@ -5,10 +5,10 @@ parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFo
 parser.add_argument("--Lbox", help="Box size", type=float, default=250.0)
 parser.add_argument("--Npart", help="Particle number should be Npart^3", type=float, default=2048)
 parser.add_argument("--b", help="Linking length", type=float, default=0.2)
-parser.add_argument("--Om0", help="Omegam", type=int, default=0.3)
-parser.add_argument("--mDelta", help="SO halo mass", type=int, default=1.E15)
-parser.add_argument("--cDelta", help="Concentration", type=int, default=4.0)
-parser.add_argument("--Delta", help="Overdensity with respect to mean", type=int, default=200.0)
+parser.add_argument("--Om0", help="Omegam", type=float, default=0.3)
+parser.add_argument("--mDelta", help="SO halo mass", type=float, default=1.E15)
+parser.add_argument("--cDelta", help="Concentration", type=float, default=4.0)
+parser.add_argument("--Delta", help="Overdensity with respect to mean", type=float, default=200.0)
 
 args = parser.parse_args()
 
