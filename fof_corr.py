@@ -73,7 +73,7 @@ def get_dlnm_dp(c, Delta, b):
 
     #return spl(poisson_prob_threshold(), nu=1)
     loc_der = poisson_prob_threshold()
-    return (spl(loc_der*1.05)-spl(loc_der*0.95))/(0.02)
+    return np.absolute(spl(loc_der*1.05)-spl(loc_der*0.95))/(0.02)
 
 # Given the b work out the x to which you percolate, and the corresponding mass
 from scipy.optimize import brentq
@@ -89,4 +89,4 @@ alpha = (1.+2*xfofinf/(1.+xfofinf))
 nu = 4./3.
 mfof = mfofinf*(1.+0.22*alpha*Lsize**(-1/nu)*get_dlnm_dp(args.cDelta, args.Delta, args.b))
 
-print args.mDelta, args.cDelta, mfof, mfofinf
+print args.mDelta, args.cDelta, mfof, mfofinf, mfof/mfofinf
